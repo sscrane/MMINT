@@ -15,11 +15,11 @@ script:
 after_success:
  - >
    test $TRAVIS_PULL_REQUEST = false &&
-   git clone https://github.com/adisandro/adisandro.github.io.git &&
-   cd adisandro.github.io &&
+   git clone https://github.com/sscrane/sscrane.github.io.git &&
+   cd sscrane.github.io &&
    rm -rf mmint/${TRAVIS_BRANCH/master/release} &&
    mv $TRAVIS_BUILD_DIR/releng/edu.toronto.cs.se.mmint.install/target/repository mmint/${TRAVIS_BRANCH/master/release} &&
    git add . &&
    git reset --soft HEAD~1 &&
-   git commit --author="Alessio Di Sandro <alessio.disandro@gmail.com>" -m "mmint: Update builds" &&
-   git push -f -q https://adisandro:$GITHUB_API_KEY@github.com/adisandro/adisandro.github.io.git master &> /dev/null
+   git commit --author="Sophie Crane <sscrane@smith.edu>" -m "mmint: Update builds" &&
+   git push -f -q https://sscrane:$Token@github.com/sscrane/sscrane.github.io.git master &> /dev/null
