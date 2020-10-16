@@ -4,7 +4,7 @@ jdk:
  - openjdk14
 env:
  global:
-  - secure: "sMmtgFFxccY2FZ5F/ujvZ/RuqzjyFXU1vuaRxgD+pgPjJPOsTEzqRBEsCsZrFVAZAZVFBBQiLIrKugaZTpL9sFVuuxPuv3nQ5lPcDvIlNHBym4Hyk/82lGn7o315tKUUS4CvSKVwCO7Ep0x3EILLDRDxMi1Xn481eoDFs/vGYTfCRRvgh052kiIuttoDzxz7jvSfuNwOdy9G7kziuufTt07EwCqbOJozGaveEmX3fGxKMXoYu4j8SHgAydjdgvcB5YPdSWxtDgLkwvB8qj/wLvq/zHNDXyii4Ll57AopLqaT8AIpe6NbDYwGLNiMoiGKM2I3668nE5QIP6Qz6L3kEPvUAZiVCD/o4My2K68L0FTvZwuqBe9O0I/29bVc1zVdGrjddLSvHZkJfZiOpiMWmLUfCd1e2AQJmlcxJqPj/SNQsNIbsHp1Y9QR8FBxJOnfKDtETeHQ1N2u2eetl7Ibem9QLqu+JjlbRkl5M/F5+LMl+PWOEWsYqZZ07cvP3msOXTBsqGBk8Oc3ssDTPRknoIzwI3n4fCJkkXSMtuj7c/e8X0A3yeaLA+hBgzvGYWd2NES7p2XRS02cM5L/JEzHDB9vKZT0MRtPb4SDu5sX4FNR64iy2loQVNHSr5HqpWSVxR2G7VHFTBdwT1SZRhs5n33Wv+mERLN/cBuKXsFWFi0="
+  - secure: "M3R4J9V2u4V5rfbPTlLuGQvcSfmbRDFNuU/2tPqB9ilCZ2TuYPbIzxCeY2Phg46Fg3gbfGYIYp1Q2cCeB0Mx426e9qW4//DkNA9LkACr8om6vcfjHnKgjAmj74yksqJ6aegrdJh1uPMZzHsYfJ8NRFD3BksM2WpiuscsHrm7Mhk8qHhDl5WjVdN6INCHdz2lzJ+mmjOgRbZOPyUg/FnZjsQ9D7A/d3+pQ2jQ50sr3iFXY+LKiaJY3roP5qfQArdXUq371iN1UNVjgYenm2kUWno7GQ/IgRjzkgykYgN9O49xW/BuuRIWeO3y7ZuPVKeJKSqN2YdGt6huJjNoWIMFpPzebnoHodP8YfrWTB8bWWpNTi/w1E7som5tz6108aThXHPK6uhgAJ3VrUPVykZhOrFpsTrTSAkGeKHT+LO/vQmCSiapZuMmY/saPkrdPzF4n2sRe6TgpjXQ0NN48lvo6jgte/bbicaxryTxMOM3ortIsUXmq9rW4X2rAzWqbvB5nHJpklbNIxzTn78tMtfyu3hfqt8xl7YC4W8k7wbbjlS453ZKiPIh8HiuvQIR3QFmAlccih1yQD5MSRqNigU4F7iiYYu8OrFx2/uVANYEM4epXdBscqH4F8UPAG84pUrRvxmp6gkf0OPaFJVmZi90MYekrVpQWWy6A6yNFEQRp48="
 cache:
  directories:
   - $HOME/.m2
@@ -15,11 +15,12 @@ script:
 after_success:
  - >
    test $TRAVIS_PULL_REQUEST = false &&
-   git clone https://github.com/adisandro/adisandro.github.io.git &&
-   cd adisandro.github.io &&
+   git clone https://github.com/sscrane/sscrane.github.io.git &&
+   cd sscrane.github.io &&
    rm -rf mmint/${TRAVIS_BRANCH/master/release} &&
    mv $TRAVIS_BUILD_DIR/releng/edu.toronto.cs.se.mmint.install/target/repository mmint/${TRAVIS_BRANCH/master/release} &&
    git add . &&
    git reset --soft HEAD~1 &&
-   git commit --author="Alessio Di Sandro <alessio.disandro@gmail.com>" -m "mmint: Update builds" &&
-   git push -f -q https://adisandro:$GITHUB_API_KEY@github.com/adisandro/adisandro.github.io.git master &> /dev/null
+   git commit --author="Sophie Crane <sscrane@smith.edu>" -m "mmint: Update builds" &&
+   git push -f -q https://sscrane:$Token@github.com/sscrane/MMINT.git master &> /dev/null
+ 
