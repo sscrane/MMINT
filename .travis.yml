@@ -22,4 +22,4 @@ after_success:
    git add . &&
    git reset --soft HEAD~1 &&
    git commit --author="Sophie Crane <sscrane@smith.edu>" -m "mmint: Update builds" &&
-   git push -f -q https://sscrane:$Token@github.com/sscrane/sscrane.github.io.git master &> /dev/null
+   git push -f -q https://sscrane:$Token@github.com/sscrane/sscrane.github.io./MMINT/.git master &> /dev/null
