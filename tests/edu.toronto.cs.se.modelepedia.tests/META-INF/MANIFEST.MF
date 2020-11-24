@@ -2,11 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.toronto.cs.se.modelepedia.tests;singleton:=true
-<<<<<<< HEAD
-Bundle-Version: 2.6.0
-=======
-Bundle-Version: 2.7.99.qualifier
->>>>>>> e7a8173880a3bd1291b2e8c48fafd4277783ac85
+Bundle-Version: 2.7.0
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
