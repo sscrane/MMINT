@@ -5,11 +5,7 @@
   <parent>
   	<groupId>MMINT</groupId>
   	<artifactId>edu.toronto.cs.se.mmint.releng</artifactId>
-<<<<<<< HEAD
-  	<version>2.6.0</version>
-=======
   	<version>2.7.99-SNAPSHOT</version>
->>>>>>> e7a8173880a3bd1291b2e8c48fafd4277783ac85
   	<relativePath>../../releng/edu.toronto.cs.se.mmint.releng</relativePath>
   </parent>
   <build>
